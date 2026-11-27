@@ -19,9 +19,15 @@ let package = Package(
             name: "DebugSwift",
             dependencies: [],
             path: "DebugSwift",
+            exclude: ["Tests"],
             resources: [
                 .process("Resources")
             ]
+        ),
+        .testTarget(
+            name: "DebugSwiftTests",
+            dependencies: ["DebugSwift"],
+            path: "Tests/DebugSwiftTests"
         )
     ],
     swiftLanguageModes: [.v6]
